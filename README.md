@@ -24,6 +24,6 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 
 We use [backpack](https://github.com/palmerhq/backpack) to watch and build the application, so you can use the latest ES6 features (module syntax, async/await, etc.).
 
-## this repo is based on th start kit from (https://github.com/goleh/nuxt-passport-auth)
+this repo is based on the starter kit from (https://github.com/goleh/nuxt-passport-auth)
 
 ![screenshots](https://github.com/oliviapycz/ApiFoodInterface/raw/master/screenshot.png)
