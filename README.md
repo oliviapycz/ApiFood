@@ -1,12 +1,29 @@
-# French Api Food
+# Api Food Interface
 
-> An API to serve another project : twimh-laravel
+> Nuxt.js project
+> Bulma framework
+> Sass
+> PWA
 
-## Objectifs:
+## Build Setup
 
-###  - Rendre disponible les aliments
-  > Répertorier tous les aliments existants en français
+``` bash
+# install dependencies
+$ npm install # Or yarn install
 
-###  - Rendre disponible les types de mesures
-  > Répertorier tous les types de mesures existants en français
+# serve with hot reload at localhost:3000
+$ npm run dev
 
+# build for production and launch server
+$ npm start
+```
+
+For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+
+## Backpack
+
+We use [backpack](https://github.com/palmerhq/backpack) to watch and build the application, so you can use the latest ES6 features (module syntax, async/await, etc.).
+
+## this repo is based on th start kit from (https://github.com/goleh/nuxt-passport-auth)
+
+![screenshots](https://github.com/oliviapycz/ApiFoodInterface/raw/master/screenshot.png)

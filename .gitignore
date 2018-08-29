@@ -1,4 +1,17 @@
+# dependencies
+node_modules
 
-.DS_Store
-node_modules/
+# logs
+npm-debug.log
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist
+
+# Backpack build
+build
+
+# Env variables
 .env

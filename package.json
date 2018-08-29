@@ -1,20 +1,54 @@
 {
-  "name": "backapirecette",
+  "name": "apifoodinterface",
   "version": "1.0.0",
-  "description": "api to find food",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon",
-    "start": "node index.js"
-  },
+  "description": "Nuxt.js project",
   "author": "oliviapycz",
-  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "dev": "backpack dev",
+    "build": "nuxt build && backpack build",
+    "start": "cross-env NODE_ENV=production node build/main.js",
+    "precommit": "npm run lint",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "@nuxtjs/bulma": "^1.2.0",
+    "@nuxtjs/dotenv": "^1.1.1",
+    "@nuxtjs/pwa": "^2.0.8",
+    "axios": "^0.16.2",
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.17.2",
+    "connect-mongo": "^2.0.1",
+    "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "dotenv": "^6.0.0",
-    "express": "^4.16.3",
-    "pg": "^7.4.3"
+    "es6-promisify": "^5.0.0",
+    "express": "^4.15.3",
+    "express-session": "^1.15.5",
+    "express-validator": "^5.3.0",
+    "moment": "^2.22.2",
+    "mongoose": "^4.11.6",
+    "mongoose-mongodb-errors": "0.0.2",
+    "nuxt": "^1.0.0-rc3",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1",
+    "source-map-support": "^0.4.15",
+    "validator": "^10.7.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "backpack-core": "^0.4.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.1.0"
   }
 }

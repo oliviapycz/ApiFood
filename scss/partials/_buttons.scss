@@ -1,0 +1,28 @@
+.button--green:hover {
+    color: #fff;
+    background-color: #3b8070;
+  }
+  
+.button--maroon {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #35495e;
+  color: $color-principal-maroon;
+  text-decoration: none;
+  padding: 10px 30px;
+  // margin-left: 15px;
+}
+
+.button--green {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #3b8070;
+  color: $color-principal-green;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+
+.button--maroon:hover {
+  color: #fff;
+  background-color: #926266;
+}

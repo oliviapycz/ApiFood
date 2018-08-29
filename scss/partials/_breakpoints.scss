@@ -1,0 +1,47 @@
+/*********************
+BREAKPOINTS
+*********************/
+
+// breakpoint mixin
+@mixin breakpoint($mq01: 0, $mq2: false, $maxmin: max-width) {
+    @if $mq2 == false {
+        @media ($maxmin: $mq01) {
+            @content;
+        }
+    }
+    @else {
+        @media (min-width: $mq01) and (max-width: $mq2) {
+            @content;
+        }
+    }
+}
+
+// breakpoint variables
+$lg: 1407px;
+$md: 1215px;
+$sm: 1023px;
+$xs: 768px;
+
+
+// responsive font size mixin
+@mixin font-size-map($font-size-map) {
+    @each $breakpoint, $font-size in $font-size-map {
+        @if $breakpoint == null {
+            font-size: $font-size;
+        } @else {
+            @include breakpoint($breakpoint) {
+                font-size: $font-size;
+            }
+        }
+    }
+}
+
+// font-size
+$html-font-size: (null: 16px, $md: 15px, $sm: 14px, $xs: 13px);
+$h1-font-size: (null: 3rem !important, $md: 2.5rem !important, $sm: 2rem !important, $xs: 1.75rem !important);
+$h2-font-size: (null: 2.5rem !important, $md: 2rem !important, $sm: 1.75rem !important, $xs: 1.5rem !important);
+$h3-font-size: (null: 2rem !important, $md: 1.75rem !important, $sm: 1.5rem !important, $xs: 1.25rem !important);
+$h4-font-size: (null: 1.75rem !important, $md: 1.5rem !important, $sm: 1.25rem !important, $xs: 1rem !important);
+$h5-font-size: (null: 1.25rem, $md: 1rem, $sm: 0.75rem, $xs: 0.50rem);
+$h6-font-size: (null: 1rem, $md: 0.75rem, $sm: 0.50rem, $xs: 0.25rem);
+$p-font-size: (null: 1rem !important, $md: 1rem !important, $sm:0.75rem !important, $xs: 0.75rem !important);
