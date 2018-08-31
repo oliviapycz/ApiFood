@@ -14,7 +14,7 @@
           <nuxt-link v-if="!$store.state.authUser" class="navbar-item" to="/login">Sign In</nuxt-link>
           <nuxt-link v-if="!$store.state.authUser" class="navbar-item" to="/register">Sign Up</nuxt-link>
           <nuxt-link v-if="$store.state.authUser" class="navbar-item" to="/dashboard">Dashboard</nuxt-link>
-          <nuxt-link v-if="$store.state.authUser" class="navbar-item"  to="/" @click="onLogout">Logout</nuxt-link>
+          <a v-if="$store.state.authUser" class="navbar-item"   @click="onLogout">Logout</a>
         </div>
       </div>
     </nav>
@@ -32,6 +32,9 @@ export default {
     onLogout () {
       console.log('onLogout')
       this.$store.dispatch('logout')
+        .then(() => {
+          this.$store.state.authUser = null
+        })
         .then(() => {
           this.$router.push({'path': '/'})
         })
