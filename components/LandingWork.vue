@@ -44,7 +44,7 @@
           </div>
           <footer>
             <a
-            href="https://github.com/oliviapycz/ApiFoodInterface"
+            href="https://github.com/oliviapycz/ApiFood"
             target="_blank"
             class="button--green"><i class="fab fa-github fa-2x"></i></a>
           </footer>

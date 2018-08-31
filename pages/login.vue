@@ -1,8 +1,6 @@
 <template>
   <section class="container" style="min-height:70vh">
-    <h2 class="title">
-        Sign In
-    </h2>
+    <h2 class="title">Sign In</h2>
     
     <div class="columns is-centered">
       <form @submit.prevent="onSubmit" class=" column is-half">
@@ -55,8 +53,6 @@
 </template>
 
 <script>
-// import axios from 'axios'
-// import Cookie from 'js-cookie'
 export default {
   data () {
     return {
@@ -77,18 +73,16 @@ export default {
       })
         .then(() => {
           if (this.$store.state.authUser) {
-            this.$router.replace('/')
+            this.$router.push({'path': '/dashboard'})
           }
+        })
+        .catch((err) => {
+          console.log(err)
         })
     }
   }
 }
 </script>
 
-<style>
-  .title {
-    display: flex;
-    justify-content: center;
-  }
-</style>
+
 

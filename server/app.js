@@ -14,9 +14,6 @@ require('./handlers/passport');
 const errorHandlers = require('./handlers/errorHandlers')
 const helpers = require('./helpers');
 
-// import api from './api'
-// import { db } from './config'
-
 // create our Express app
 const app = express()
 
@@ -29,10 +26,6 @@ app.use(cors());
 // Exposes a bunch of methods for validating data. Used heavily on userController.validateRegister
 app.use(expressValidator());
 
-// const host = process.env.HOST || '127.0.0.1'
-// const port = process.env.PORT || 3000
-// app.set('port', port)
-
 // Takes the raw requests and turns them into usable properties on req.body
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,19 +34,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Sessions allow us to store data on visitors from request to request
-// This keeps users logged in and allows us to send flash messages
+// This keeps users logged in
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: false,
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
-// app.use(session({
-//   secret: '9dj48bhkldhr48fj3890drkgb6739&#HF(&5j5&*^%',
-//   resave: false,
-//   saveUninitialized: false,
-//   cookie: { maxAge: 60000 }
-// }))
 
 // Passport JS is what we use to handle our logins
 app.use(passport.initialize());
@@ -82,12 +69,6 @@ app.use('/', routes);
 // If that above routes didnt work, we 404 them and forward to error handler
 // app.use(errorHandlers.notFound);
 
-// Set up DB
-// mongoose.connect(db)
-// mongoose.Promise = global.Promise
-
-// Set up passport auth
-// require('./auth_config')(passport)
 
 // app.use('/api', api)
 
@@ -106,9 +87,5 @@ if (config.dev) {
 
 // Give nuxt middleware to express
 app.use(nuxt.render)
-
-// Listen the server
-// app.listen(port, host)
-// console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console
 
 module.exports = app;

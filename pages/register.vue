@@ -119,11 +119,3 @@ export default {
 }
 </script>
 
-
-<style>
-  .title {
-    display: flex;
-    justify-content: center;
-  }
-</style>
-

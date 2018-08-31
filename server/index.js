@@ -13,6 +13,7 @@ mongoose.connection.on('error', (err) => {
 
 // import all of our models
 require('./models/Food');
+require('./models/ProposedFood');
 require('./models/User');
 
 // Start our app!

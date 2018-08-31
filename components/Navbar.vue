@@ -13,7 +13,8 @@
         <div class="navbar-end" @click="showNav = !showNav">
           <nuxt-link v-if="!$store.state.authUser" class="navbar-item" to="/login">Sign In</nuxt-link>
           <nuxt-link v-if="!$store.state.authUser" class="navbar-item" to="/register">Sign Up</nuxt-link>
-          <button v-if="$store.state.authUser" class="navbar-item"  @click="onLogout">Logout</button>
+          <nuxt-link v-if="$store.state.authUser" class="navbar-item" to="/dashboard">Dashboard</nuxt-link>
+          <nuxt-link v-if="$store.state.authUser" class="navbar-item"  to="/" @click="onLogout">Logout</nuxt-link>
         </div>
       </div>
     </nav>
@@ -29,10 +30,14 @@ export default {
   },
   methods: {
     onLogout () {
-      this.$store.state.authUser = null
       console.log('onLogout')
       this.$store.dispatch('logout')
-      this.$store.state.authUser = null
+        .then(() => {
+          this.$router.push({'path': '/'})
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     }
   }
 }
