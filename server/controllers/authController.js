@@ -16,6 +16,7 @@ export const login = passport.authenticate('local', {
 export const logout = (req, res) => {
     // req.logout()
     delete req.session.authUser
+    req.logout()
     res.json({ ok: true })
     console.log('success', 'Your are now logged out')
 };
