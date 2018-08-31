@@ -52,6 +52,12 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+header {
+  margin-bottom: 3vh;
+}
+nuxt {
+  min-height: 93vh !important;
+}
 
 
 h1 { @include font-size-map($h1-font-size); }

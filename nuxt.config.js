@@ -52,7 +52,7 @@ module.exports = {
     orientation: 'portrait-primary',
     background_color: '#fff',
     theme_color: '#3b8070',
-    description: 'An Open Source Api Fodd Interface fro the Community',
+    description: 'An Open Source Api Food Interface fro the Community',
     dir: 'ltr',
     lang: 'en-US',
     icons: [

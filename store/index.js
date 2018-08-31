@@ -7,12 +7,24 @@ Vue.use(Vuex)
 const store = () => new Vuex.Store({
 
   state: {
-    authUser: null
+    authUser: null,
+    findIngredient: null,
+    findProposedIngredient: null,
+    addIngredient: null
   },
 
   mutations: {
     SET_USER: function (state, user) {
       state.authUser = user
+    },
+    SET_SEARCH_ING: function (state, food) {
+      state.findIngredient = food
+    },
+    SET_SEARCH_WAIT_ING: function (state, food) {
+      state.findProposedIngredient = food
+    },
+    ADD_ING: function (state, food) {
+      state.addIngredient = food
     }
   },
 
@@ -57,6 +69,27 @@ const store = () => new Vuex.Store({
       } catch (error) {
         throw new Error('Wrong password')
       }
+    },
+    async findIngredient ({ commit }, { food }) {
+      console.log('[STORE] findIngredient')
+      await axios.get(`api/foods/${food}`)
+        .then((data) => {
+          console.log('data return', data)
+          return data ? commit('SET_SEARCH_ING', data) : 'nowhere to be found'
+        })
+      await axios.get(`api/proposedfoods/${food}`)
+        .then((data) => {
+          console.log('data return', data)
+          return data ? commit('SET_SEARCH_WAIT_ING', data) : 'nowhere to be found'
+        })
+    },
+    async addIngredient ({ commit }, { food }) {
+      console.log('[STORE] addIngredient', food)
+      await axios.post('/api/proposedfoods', { food })
+        .then((data) => {
+          console.log('all done')
+          commit('ADD_ING', data)
+        })
     }
   }
 })

@@ -3,9 +3,7 @@ const User = require('../models/User')
 mongoose.model('User');
 const promisify = require('es6-promisify');
 
-export const validateRegister = (req, res, next) => {
-    console.log(res);
-    
+export const validateRegister = (req, res, next) => {    
     //  come from app.js the expressValidator plugin
     req.sanitizeBody('username');
     req.checkBody('username', 'You must supply a username').notEmpty();
