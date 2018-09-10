@@ -7,11 +7,11 @@
 
     <nuxt/>
 
-    <footer class="footer">
+    <!-- <footer class="footer">
       <div class="content has-text-centered">
         <p>Olivia Py-Cz - AπFood - {{ year }}</p>
       </div>
-    </footer>
+    </footer> -->
 
   </div>
 </template>

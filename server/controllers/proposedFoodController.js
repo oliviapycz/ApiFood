@@ -16,3 +16,8 @@ export const findProposedFood = async (req, res) => {
     console.log('findProposedFood', proposedFood)
     res.json(proposedFood);
 };
+
+export const findProposedFoods = async (req, res) => {
+    const foods = await ProposedFood.find();
+    res.json(foods);
+};

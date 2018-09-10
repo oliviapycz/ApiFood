@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { findFood, findFoods } = require('../controllers/foodController')
-const { proposeFood, findProposedFood } = require('../controllers/proposedFoodController')
+const { proposeFood, findProposedFoods, findProposedFood } = require('../controllers/proposedFoodController')
 const measureController = require('../controllers/measureController')
 const { validateRegister, register } = require('../controllers/userController')
 const { login, logout } = require('../controllers/authController')
@@ -34,6 +34,10 @@ router.get(
 router.post(
     `/api/proposedfoods`,
     catchErrors(proposeFood)
+)
+router.get(
+    `/api/proposedfoods`,
+    catchErrors(findProposedFoods)
 )
 router.get(
     '/api/proposedfoods/:food',
